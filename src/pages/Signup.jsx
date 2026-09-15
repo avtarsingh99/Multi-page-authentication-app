@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const Signup = () => {
 
@@ -7,9 +8,20 @@ const Signup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const navigate = useNavigate()
+    const {signup} = useAuth()
+
     const handleSignup = (e) => {
         e.preventDefault()
         console.log('Signup attempted with: ', username, email, password)
+
+        const result = signup(username, email, password)
+
+        if(result.success){
+            navigate('/dashboard')
+        }else{
+            alert(result.message)
+        }
     }
 
     return (
@@ -31,6 +43,7 @@ const Signup = () => {
                             placeholder='e.g. avtar99'
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            required
                         />
                     </div>
                     <div className='flex flex-col gap-2'>
@@ -41,6 +54,7 @@ const Signup = () => {
                             placeholder='e.g. avtar@gmail.com'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
                     <div className='flex flex-col gap-2'>
@@ -51,6 +65,7 @@ const Signup = () => {
                             placeholder='*****'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                     </div>
                 </div>

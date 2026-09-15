@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 const Login = () => {
 
@@ -7,9 +8,18 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
+    const { login } = useAuth()
+
     const handleLogin = (e) => {
         e.preventDefault()
         console.log('Login attempted with: ', email, password)
+        const result = login(email, password)
+
+        if (result.success) {
+            navigate('/dashboard')
+        } else {
+            alert(result.message)
+        }
     }
 
     return (
@@ -31,6 +41,7 @@ const Login = () => {
                             placeholder='e.g. avtar@email.com'
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
                     <div className='flex flex-col gap-2'>
@@ -41,6 +52,7 @@ const Login = () => {
                             placeholder='*****'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                     </div>
                 </div>
