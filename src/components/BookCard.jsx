@@ -136,7 +136,7 @@ const BookCard = () => {
             const isBorrowed = borrowedBooks.some((borrowedBook) => borrowedBook.id === book.id)
 
             return (
-                <div key={book.id} className='flex flex-col gap-4 p-5 border border-stone-300 rounded-xl max-w-80 w-full hover:shadow-xl hover:shadow-amber-300/40 transition-all'>
+                <div key={book.id} className='flex flex-col gap-4 p-5 border border-stone-300 rounded-xl md:max-w-80 w-full hover:shadow-xl hover:shadow-amber-300/40 transition-all'>
 
                     <div className='flex justify-between items-center gap-6'>
                         <p className='px-3 py-1 bg-emerald-900 text-amber-300 text-sm w-fit rounded-full font-bold'>{book.ratings} ⭐</p>
@@ -155,7 +155,7 @@ const BookCard = () => {
                         <button className='px-6 py-3 rounded-xl bg-amber-200 text-emerald-900 font-bold text-md hover:bg-amber-300 hover:cursor-pointer transition-all w-full' onClick={() => navigate(`/books/${book.id}`)}>View</button>
                         {isBorrowed ? (
                             <>
-                                <button className='px-6 py-3 rounded-xl bg-red-200 text-red-700 font-bold text-md hover:bg-red-400 hover:cursor-pointer transition-all w-full' onClick={() => removeBook(book.id)}>Return</button>
+                                <button className='px-6 py-3 rounded-xl bg-red-100 text-red-800 font-bold text-md hover:bg-red-600 hover:text-white hover:cursor-pointer transition-all w-full' onClick={() => removeBook(book.id)}>Return</button>
                             </>
                         ) : (
                             <>

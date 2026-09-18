@@ -24,11 +24,14 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
 
-        const storedUser = localStorage.getItem('user')
+        const storedUser = JSON.parse(localStorage.getItem('user'))
 
         if (storedUser) {
+            const storedBooks = JSON.parse(localStorage.getItem(`borrowedBooks_${storedUser.email}`)) ||[]
+
             setUser(storedUser)
             setIsAuthenticated(true)
+            setBorrowedBooks(storedBooks)
         }
 
         setLoading(false)

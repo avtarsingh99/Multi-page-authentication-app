@@ -1,8 +1,7 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const steps = [
     {
       number: "01",
@@ -29,11 +28,11 @@ const About = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-6 mt-6">
       <section className="flex flex-col gap-5">
-        <h1 className="text-5xl font-bold text-amber-400 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-amber-400 text-center">
           About LibNest
         </h1>
 
-        <div className="flex flex-col gap-5 max-w-225">
+        <div className="flex flex-col gap-5 max-w-225 px-4 md:px-6">
           <p className="text-sm text-stone-500 text-justify">
             LibNest is a simple and user-friendly online library application
             created to make book discovery and borrowing easier. Our goal is to
@@ -47,11 +46,11 @@ const About = () => {
       </section>
 
       <section className="flex flex-col gap-5">
-        <h1 className="text-4xl font-bold text-amber-400 text-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-amber-400 text-center">
           Our Mission
-        </h1>
+        </h2>
 
-        <div className="flex flex-col gap-5 max-w-225">
+        <div className="flex flex-col gap-5 max-w-225 px-4 md:px-6">
           <p className="text-sm text-stone-500 text-justify">
             Our mission is to make reading more accessible, organized, and
             enjoyable. We believe that books are not only a source of
@@ -64,20 +63,24 @@ const About = () => {
         </div>
       </section>
       <section className="flex flex-col gap-6 items-center">
-        <h2 className="text-4xl font-bold text-amber-400">How LibNest Works</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-amber-400">
+          How LibNest Works
+        </h2>
 
-        <div className="grid grid-cols-2 gap-12 items-center max-w-300 w-full justify-center">
+        <div className="grid grid-cols-2 gap-4 md:gap-12 items-center max-w-300 w-full justify-center px-4">
           {steps.map((step) => (
             <div
               key={step.number}
-              className="flex flex-col gap-4 items-center justify-center px-5 py-4 border border-l-6 border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10"
+              className="flex flex-col gap-4 items-center justify-center px-4 py-4 border border-l-6 border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10"
             >
-              <p className="font-bold text-3xl text-amber-400">{step.number}</p>
+              <p className="font-bold text-2xl md:text-3xl text-amber-400">
+                {step.number}
+              </p>
               <div className="flex flex-col gap-0 items-center">
-                <p className="font-bold text-lg text-emerald-800">
+                <p className="font-bold text-md md:text-lg text-center text-emerald-800">
                   {step.title}
                 </p>
-                <p className="text-md text-justify text-stone-600">
+                <p className="text-sm md:text-md text-justify text-stone-600">
                   {step.description}
                 </p>
               </div>
@@ -85,13 +88,13 @@ const About = () => {
           ))}
         </div>
       </section>
-      <section className="flex flex-col gap-6 items-center justify-between bg-emerald-950 w-full py-8">
-        <div className="flex flex-col gap-14 items-center">
+      <section className="flex flex-col gap-6 items-center justify-between bg-emerald-950 w-full py-12">
+        <div className="flex flex-col gap-14 items-center px-4 md:px-12">
           <div className="flex flex-col gap-5 items-center">
-            <h1 className="text-4xl font-bold text-amber-400">
+            <h1 className="text-2xl md:text-4xl font-bold text-amber-400 text-center">
               Your Next Chapter Starts Here
             </h1>
-            <p className="text-lg text-white/80 ">
+            <p className="text-sm md:text-lg text-white/80 text-center ">
               A good book can introduce you to a new idea, a new world, or a new
               version of yourself. Explore our collection and find your next
               favorite book.

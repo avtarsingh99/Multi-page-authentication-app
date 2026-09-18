@@ -19,13 +19,13 @@ const BookDetail = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 px-16 py-16">
+    <div className="flex flex-col gap-6 px-4 md:px-16 py-16">
       <img
         src={book.img}
         alt={book.title}
         className="w-full max-h-125 object-cover rounded-2xl"
       />
-      <h1 className="text-3xl text-center font-bold text-emerald-900">
+      <h1 className="text-2xl md:text-3xl text-center font-bold text-emerald-900">
         {book.title}
       </h1>
       <div className="flex justify-between items-center">

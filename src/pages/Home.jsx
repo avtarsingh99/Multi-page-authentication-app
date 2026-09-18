@@ -36,19 +36,20 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-6">
+      {/* Hero section */}
       <section
-        className="min-h-125 bg-cover bg-center px-12 py-12 w-full text-center flex items-center justify-center"
+        className="min-h-110 md:min-h-125 bg-cover bg-center px-4 md:px-12 pt-8 pb-6 md:pb-12 w-full text-center flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('https://images.pexels.com/photos/990432/pexels-photo-990432.jpeg')",
+            "url('https://images.pexels.com/photos/34149049/pexels-photo-34149049.jpeg')",
         }}
       >
         <div className="flex flex-col gap-14 items-center">
           <div className="flex flex-col gap-5">
-            <h1 className="text-6xl font-bold text-amber-400">
+            <h1 className="text-4xl md:text-6xl font-bold text-amber-400">
               Discover Your Next Great Read
             </h1>
-            <p className="text-lg text-white/80 ">
+            <p className="text-md md:text-lg text-white/80 ">
               Explore amazing books, discover new authors, and start your
               reading journey with LibNest.
             </p>
@@ -63,69 +64,71 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Why Choose LibNest */}
       <section className="flex flex-col gap-6 items-center">
-        <h2 className="text-4xl font-bold text-amber-400">
+        <h2 className="text-2xl md:text-4xl font-bold text-amber-400">
           Why Choose LibNest?
         </h2>
 
-        <div className="grid grid-cols-2 gap-12 items-center max-w-300 w-full justify-center">
-          <div className="flex flex-col gap-4 items-center justify-center px-5 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
-            <p className="font-bold text-lg text-emerald-800">
+        <div className="grid grid-cols-2 gap-4 md:gap-12 items-center max-w-300 w-full justify-center px-4 md:px-12">
+          <div className="flex flex-col gap-4 items-center justify-center px-4 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
+            <p className="font-bold text-md md:text-lg text-center text-emerald-800">
               A Collection for Everyone
             </p>
-            <p className="text-md text-justify text-stone-600">
+            <p className="text-sm md:text-md text-justify text-stone-600">
               Explore books from different genres, authors, and writing styles.
               Find something for every mood and interest.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 items-center justify-center px-5 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
-            <p className="font-bold text-lg text-emerald-800">
+          <div className="flex flex-col gap-4 items-center justify-center px-4 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
+            <p className="font-bold text-md md:text-lg text-center text-emerald-800">
               Borrow with Ease
             </p>
-            <p className="text-md text-justify text-stone-600">
+            <p className="text-sm md:text-md text-justify text-stone-600">
               Logged-in users can borrow books and manage their borrowed
               collection from their personal dashboard.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 items-center justify-center px-5 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
-            <p className="font-bold text-lg text-emerald-800">
+          <div className="flex flex-col gap-4 items-center justify-center px-4 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
+            <p className="font-bold text-md md:text-lg text-center text-emerald-800">
               Track Your Reading
             </p>
-            <p className="text-md text-justify text-stone-600">
+            <p className="text-sm md:text-md text-justify text-stone-600">
               Visit your dashboard to view borrowed books, read book details,
               and return books whenever you want with ease.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 items-center justify-center px-5 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
-            <p className="font-bold text-lg text-emerald-800">
+          <div className="flex flex-col gap-4 items-center justify-center px-4 py-4 border border-amber-300 rounded-xl bg-white shadow-lg shadow-amber-300/10">
+            <p className="font-bold text-md md:text-lg text-center text-emerald-800">
               Explore 10K+ Books from Worldwide
             </p>
-            <p className="text-md text-justify text-stone-600">
+            <p className="text-sm md:text-md text-justify text-stone-600">
               Explore books from different genres, authors, and writing styles.
-              Find something for every mood and interest.
+              Find everything.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Differenct genres */}
       <section className="flex flex-col gap-6 items-center">
-        <h2 className="text-4xl font-bold text-amber-400">
+        <h2 className="text-2xl md:text-4xl font-bold text-amber-400">
           Explore Different Genres
         </h2>
 
-        <div className="grid grid-cols-3 gap-12 items-center max-w-300 w-full justify-center">
+        <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 md:gap-12 items-center max-w-300 w-full justify-center px-4 md:px-12">
           {genres.map((genre) => (
             <div
               key={genre.title}
-              className="flex flex-col gap-4 items-center justify-center px-5 py-4 border border-l-6 border-emerald-800 rounded-xl bg-white shadow-lg shadow-emerald-800/10"
+              className="flex flex-col gap-2 md:gap-4 items-center justify-center px-5 py-4 border border-l-6 border-emerald-800 rounded-xl bg-white shadow-lg shadow-emerald-800/10"
             >
-              <p className="font-bold text-lg text-emerald-800">
+              <p className="font-bold text-md md:text-lg text-emerald-800">
                 {genre.title}
               </p>
-              <p className="text-md text-justify text-stone-600">
+              <p className="text-sm md:text-md text-justify text-stone-600">
                 {genre.description}
               </p>
             </div>
@@ -133,13 +136,14 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="flex flex-col gap-6 items-center justify-between bg-emerald-950 w-full py-8">
-        <div className="flex flex-col gap-14 items-center">
+      {/* CTA section */}
+      <section className="flex flex-col gap-6 items-center justify-between bg-emerald-950 w-full py-12">
+        <div className="flex flex-col gap-14 items-center px-4 md:px-12">
           <div className="flex flex-col gap-5 items-center">
-            <h1 className="text-4xl font-bold text-amber-400">
+            <h1 className="text-2xl md:text-4xl font-bold text-amber-400 text-center">
               Your Next Chapter Starts Here
             </h1>
-            <p className="text-lg text-white/80 ">
+            <p className="text-sm md:text-lg text-white/80 text-center ">
               A good book can introduce you to a new idea, a new world, or a new
               version of yourself. Explore our collection and find your next
               favorite book.
