@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-4 md:flex justify-between items-center p-4 md:p-16 py-5 bg-emerald-100">
+      <div className="flex flex-col gap-4 md:flex-row justify-between items-center p-4 md:p-16 py-5 bg-emerald-100">
         <div>
           <h1 className="text-2xl md:text-4xl font-bold text-emerald-900">
             Welcome back,{" "}
@@ -28,9 +28,9 @@ const Dashboard = () => {
                     user.username.slice(1)}
                 </span>
               </p>
-              <p className="text-md text-white">
+              <p className="text-sm md:text-md text-white">
                 Email:{" "}
-                <span className="text-lg font-semibold text-amber-300">
+                <span className="text-md md:text-lg font-semibold text-amber-300">
                   {user.email}
                 </span>
               </p>
